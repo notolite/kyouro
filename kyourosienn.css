@@ -1,0 +1,121 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+textarea{
+	font-family: 'Andika', 'Calibri', sans-serif;
+	font-size: 1.2em;
+}
+.Title{
+	color: #556b2f;
+	font-weight: bold;
+}
+#Siyouhou{
+	background-color: #f5f5dc;
+}
+#Siyouhou h2{
+	font-size: 1em;
+	color: #556b2f;
+}
+#Siyouhou ul{
+	list-style: none;
+	padding-left: 0 !important;
+}
+@media screen and (min-width: 481px){
+	h1{
+		font-weight: normal;
+		padding-left: 0.5em;
+	}
+	h1::after{
+		content: 'Kyouikuro—ˈmazı Nyuuryokuˈsıenn';
+		display: block;
+		font-size: 0.7em !important;
+      	font-family: 'Andika', 'Calibri', sans-serif;
+	}
+	article{
+		margin: 1em;
+	}
+	textarea{
+		display: inline-block;
+		width: 30em;
+		height: 5em;
+	}
+	#Siyouhou{
+		padding: 1em;
+		width: 80em;
+	}
+	#Siyouhou h2{
+		font-size: 1em;
+		color: #556b2f;
+		margin: 0;
+		}
+	.Title{
+		display: inline-block;
+		width: 25em;
+	}
+	.Resp{
+		display: inline-block;
+		width: 18em;
+	}
+	.toolbox{
+		display: none;
+	}
+}
+@media screen and (max-width:480px) {
+	h1{
+		text-align: center;
+		font-size: 1.5em;
+		background-color: #556b2f;
+		color: #fff;
+		margin: 0;
+		padding: 0;
+		font-weight: normal;
+	}
+	textarea{
+		display: block;
+		width: calc(100% - 1em);
+		height: 4em;
+		padding: 0;
+		margin: 0.5em;
+	}
+	#Siyouhou{
+		margin: 0.5em;
+		padding: 0.5em;
+	}
+	#Siyouhou h2{
+		text-align: center;
+		margin: 0;
+		}
+	.Resp::after{
+		content: '　→　'
+	}
+	#Siyouhou h2::before{
+		content: '●';
+		color: #556b2f;
+	}
+	#Siyouhou h2::after{
+		content: '●';
+		color: #556b2f;
+	}
+	.Compl{
+		padding-left: 1em;
+	}
+	.Title{
+		display: block;
+	}
+	.toolbox{
+		color: white;
+		display: block;
+		margin: 0.5em;
+		width: calc(100% - 2em);
+		padding: 0.5em;
+		text-align: center;
+		font-size: 1em;
+	}
+	#copy{
+    	background: #008080;
+    }
+	#clear{
+    	background: #005B80;
+    }
+}

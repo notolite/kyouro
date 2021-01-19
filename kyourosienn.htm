@@ -1,174 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-<style>
-body{
-	margin: 0;
-	padding: 0;
-}
-textarea{
-	font-family: 'Andika', 'Calibri', sans-serif;
-	font-size: 1.2em;
-}
-.Title{
-	color: #556b2f;
-	font-weight: bold;
-}
-#Siyouhou{
-	background-color: #f5f5dc;
-}
-#Siyouhou h2{
-	font-size: 1em;
-	color: #556b2f;
-}
-#Siyouhou ul{
-	list-style: none;
-	padding-left: 0 !important;
-}
-@media screen and (min-width: 481px){
-	h1{
-		font-weight: normal;
-		padding-left: 0.5em;
-	}
-	h1::after{
-		content: 'Kyouikuro—ˈmazı Nyuuryokuˈsıenn';
-		display: block;
-		font-size: 0.7em !important;
-      	font-family: 'Andika', 'Calibri', sans-serif;
-	}
-	article{
-		margin: 1em;
-	}
-	textarea{
-		display: inline-block;
-		width: 30em;
-		height: 5em;
-	}
-	#Siyouhou{
-		padding: 1em;
-		width: 80em;
-	}
-	#Siyouhou h2{
-		font-size: 1em;
-		color: #556b2f;
-		margin: 0;
-		}
-	.Title{
-		display: inline-block;
-		width: 25em;
-	}
-	.Resp{
-		display: inline-block;
-		width: 18em;
-	}
-	.toolbox{
-		display: none;
-	}
-}
-@media screen and (max-width:480px) {
-	h1{
-		text-align: center;
-		font-size: 1.5em;
-		background-color: #556b2f;
-		color: #fff;
-		margin: 0;
-		padding: 0;
-		font-weight: normal;
-	}
-	textarea{
-		display: block;
-		width: calc(100% - 1em);
-		height: 4em;
-		padding: 0;
-		margin: 0.5em;
-	}
-	#Siyouhou{
-		margin: 0.5em;
-		padding: 0.5em;
-	}
-	#Siyouhou h2{
-		text-align: center;
-		margin: 0;
-		}
-	.Resp::after{
-		content: '　→　'
-	}
-	#Siyouhou h2::before{
-		content: '●';
-		color: #556b2f;
-	}
-	#Siyouhou h2::after{
-		content: '●';
-		color: #556b2f;
-	}
-	.Compl{
-		padding-left: 1em;
-	}
-	.Title{
-		display: block;
-	}
-	.toolbox{
-		color: white;
-		display: block;
-		margin: 0.5em;
-		width: calc(100% - 2em);
-		padding: 0.5em;
-		text-align: center;
-		font-size: 1em;
-	}
-	#copy{
-    	background: #008080;
-    }
-	#clear{
-    	background: #005B80;
-    }
-}
-</style>
-<meta charset="utf-8">
-<script>
-	var Nyuuryokugunn = ["ff","cc","--","i","l","j","f","c","q","dˋ","dˎ","d—","d·","ḋ","dˈ","dˌ","d¿"];
-	var Syuturyokugunn = ["ˋ","ˎ","—","ı","·","̇","ˈ","ˌ","¿","ff","cc","--","l","j","f","c","q"];
-	var Yousosuu = Nyuuryokugunn.length;
-	function Zikkou(){
-		var Taisyou = document.getElementById("Nyuuryoku").value;
-		for(var i=0;i<Yousosuu;i++){
-			Taisyou = Taisyou.replace(new RegExp(Nyuuryokugunn[i], 'g'),Syuturyokugunn[i]);
-		}
-		document.getElementById("Kekka").value = Taisyou;
-	}
-	function clipcopy(){
-		document.getElementById("Kekka").select();
-		document.execCommand("copy");
-	}
-	function clearrequest(){
-    	document.getElementById("Nyuuryoku").value="";
-    }
-</script>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="kyourosienn.css">
+	<meta charset="utf-8">
+	<script src="kyourosienn.js"></script>
 </head>
+
 <body>
 	<h1>教育ローマ字2.0 入力支援</h1>
 	<article>
-	<textarea id="Nyuuryoku" placeholder="入力欄" autofocus onInput="Zikkou()"></textarea>
-	<textarea id="Kekka" placeholder="出力欄"></textarea>
-	<div onclick="clipcopy()" id="copy" class="toolbox">出力をコピー</div>
-	<div onclick="clearrequest()" id="clear" class="toolbox">入力欄を消去</div>
-	<section id="Siyouhou">
-	<h2>使用法</h2>
-	<ul>
-	<li><span class="Title"><span class="Resp">エムダッシュ（長音）</span>--</span></li>
-	<li><span class="Title"><span class="Resp">ミドルドット（用言）</span>l</span></li>
-      	<li><span class="Title"><span class="Resp">ドットなしi</span>i</span><span class="Compl">ドットつきiはijで入力してください。</span></li>
-	<li><span class="Title"><span class="Resp">上付きドット</span>j</span></li>
-      	<li><span class="Title"><span class="Resp">上付きアクセント符号</span>f</span></li>
-      	<li><span class="Title"><span class="Resp">下付きアクセント符号</span>c</span></li>
-      	<li><span class="Title"><span class="Resp">上付き境界下降符号</span>ff</span></li>
-        <li><span class="Title"><span class="Resp">下付き境界下降符号</span>cc</span></li>
-        <li><span class="Title"><span class="Resp">逆疑問符</span>q</span></li>
-	<li><span class="Title"><span class="Resp">上記を無効化する前接辞</span>d</span></li>
-	</ul>
-	</section>
+		<textarea id="Nyuuryoku" placeholder="入力欄" autofocus onInput="Zikkou()"></textarea>
+		<textarea id="Kekka" placeholder="出力欄"></textarea>
+		<div onclick="clipcopy()" id="copy" class="toolbox">出力をコピー</div>
+		<div onclick="clearrequest()" id="clear" class="toolbox">入力欄を消去</div>
+		<section id="Siyouhou">
+			<h2>使用法</h2>
+			<ul>
+				<li><span class="Title"><span class="Resp">エムダッシュ（長音）</span>--</span></li>
+				<li><span class="Title"><span class="Resp">ミドルドット（用言）</span>l</span></li>
+				<li><span class="Title"><span class="Resp">ドットなしi</span>i</span><span
+						class="Compl">ドットつきiはijで入力してください。</span></li>
+				<li><span class="Title"><span class="Resp">上付きドット</span>j</span></li>
+				<li><span class="Title"><span class="Resp">上付きアクセント符号</span>f</span></li>
+				<li><span class="Title"><span class="Resp">下付きアクセント符号</span>c</span></li>
+				<li><span class="Title"><span class="Resp">上付き境界下降符号</span>ff</span></li>
+				<li><span class="Title"><span class="Resp">下付き境界下降符号</span>cc</span></li>
+				<li><span class="Title"><span class="Resp">逆疑問符</span>q</span></li>
+				<li><span class="Title"><span class="Resp">上記を無効化する前接辞</span>d</span></li>
+			</ul>
+		</section>
 	</article>
 </body>
+
 </html>

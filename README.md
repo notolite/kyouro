@@ -1,3 +1,8 @@
 # kyouro
-All the files on my pages are available on CC BY-SA 3.0. If you have any questions, send a DM to @leenamgwang on Twitter.
-Kyouıkuro—ˈmazı is created by @awesomenewways.
+<p>Contents available now</p>
+<dl>
+    <dt><a href="https://leenamgwang.github.io/kyouro/kyourosienn.htm">Kyouı̇kuro—ˈmazı Nyuuryokuˈsıenn</a></dt>
+    <dd>ベトナム語TELEXに準じ，ブラウザ上で特殊記号を含む教育ローマ字の文を入力することができます．</dd>
+<dl>
+<p>教育ローマ字は，| Kyouro |さん（<a href="twitter.com/awesomenewways">Twitter</a>）によって開発されている日本語ローマ字の方式です．</p>
+<p>こちらで公開しているツールは常識の範囲内で自由に使用して構いません．教育ローマ字自体に関する権利は| Kyouro |さんにあります．</p>
