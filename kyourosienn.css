@@ -1,68 +1,110 @@
-body{
+		/* 仮 */
+
+body {
 	margin: 0;
 	padding: 0;
 }
-textarea{
-	font-family: 'Andika', 'Calibri', sans-serif;
+kbd {
+	font-family: inherit;
+	font-size: inherit;
+}
+textarea {
+	font-family: inherit;
 	font-size: 1.2em;
 }
-.Title{
-	color: #556b2f;
-	font-weight: bold;
+.Resp{
+	display: inline-block;
+	vertical-align: top;
 }
-#Siyouhou{
-	background-color: #f5f5dc;
-}
-#Siyouhou h2{
-	font-size: 1em;
-	color: #556b2f;
-}
-#Siyouhou ul{
-	list-style: none;
-	padding-left: 0 !important;
-}
-@media screen and (min-width: 481px){
-	h1{
-		font-weight: normal;
-		padding-left: 0.5em;
+@media screen and (min-width: 481px) {
+	body{
+		background: linear-gradient(black,#003);
+		color: white;
+		font-family: 'Gentium Book Basic', serif;
 	}
-	h1::after{
-		content: 'Kyouikuro—ˈmazı Nyuuryokuˈsıenn';
-		display: block;
-		font-size: 0.7em !important;
-      	font-family: 'Andika', 'Calibri', sans-serif;
-	}
-	article{
-		margin: 1em;
-	}
-	textarea{
-		display: inline-block;
-		width: 30em;
-		height: 5em;
-	}
-	#Siyouhou{
-		padding: 1em;
-		width: 80em;
-	}
-	#Siyouhou h2{
-		font-size: 1em;
-		color: #556b2f;
+	*{
 		margin: 0;
-		}
-	.Title{
-		display: inline-block;
-		width: 25em;
+		padding: 0;
+		overflow: hidden;
+	}
+	main {
+		float: left;
+		height: 80vh;
+		width: 70vw;
+		vertical-align: middle;
+		text-align: center;
+		line-height: 100%;
+	}
+	aside {
+		float: right;
+		background: rgba(255,255,255,0.2);
+		height: 80vh;
+		width: 27.5vw;
+		padding: 1vh 1vw;
+	}
+	aside ul li{
+		display: block;
+		height: 4vh;
+		border-bottom: solid #003 1px;
 	}
 	.Resp{
-		display: inline-block;
-		width: 18em;
+
+		width: 8vw;
 	}
-	.toolbox{
+	header{
+		width: 100vw;
+		height: 19.5vh;
+		padding: 1vh 1vw;
+	}
+	h1{
+		display: block;
+		font-size: 6vh;
+	}
+	h1::after {
+		content: 'Kyouikuro—ˈmazı Nyuuryokuˈsıenn';
+		display: block;
+		font-weight: normal;
+		font-size: 5vh;
+	}
+	textarea{
+		display: block;
+		border: 0;
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		text-align: center;
+		resize: none;
+		background: transparent;
+		color: #ddd;
+	}
+	textarea:focus{
+		outline: 0;
+	}
+	.toolbox {
 		display: none;
 	}
 }
 @media screen and (max-width:480px) {
-	h1{
+	kbd {
+		font-size: 100%;
+	}
+	.Title {
+		color: #556b2f;
+		font-weight: bold;
+	}
+	#Siyouhou {
+		background-color: #f5f5dc;
+	}
+	#Siyouhou h2 {
+		font-size: 1em;
+		color: #556b2f;
+	}
+	#Siyouhou ul {
+		list-style: none;
+		padding-left: 0 !important;
+	}
+	/* 仮終わり */
+	h1 {
 		text-align: center;
 		font-size: 1.5em;
 		background-color: #556b2f;
@@ -71,39 +113,36 @@ textarea{
 		padding: 0;
 		font-weight: normal;
 	}
-	textarea{
+	textarea {
 		display: block;
-		width: calc(100% - 1em);
-		height: 4em;
+		width: calc(100% - 1rem);
+		height: 8rem;
 		padding: 0;
 		margin: 0.5em;
 	}
-	#Siyouhou{
+	#Siyouhou {
 		margin: 0.5em;
 		padding: 0.5em;
 	}
-	#Siyouhou h2{
+	#Siyouhou h2 {
 		text-align: center;
 		margin: 0;
-		}
-	.Resp::after{
-		content: '　→　'
 	}
-	#Siyouhou h2::before{
+	#Siyouhou h2::before {
 		content: '●';
 		color: #556b2f;
 	}
-	#Siyouhou h2::after{
+	#Siyouhou h2::after {
 		content: '●';
 		color: #556b2f;
 	}
-	.Compl{
-		padding-left: 1em;
+	aside ul li {
+		border-bottom: #556b2f dotted 1px;
 	}
-	.Title{
-		display: block;
+	.Resp{
+		width: 6rem;
 	}
-	.toolbox{
+	.toolbox {
 		color: white;
 		display: block;
 		margin: 0.5em;
@@ -112,10 +151,13 @@ textarea{
 		text-align: center;
 		font-size: 1em;
 	}
-	#copy{
-    	background: #008080;
-    }
-	#clear{
-    	background: #005B80;
-    }
+	#copy {
+		background: #008080;
+	}
+	#clear {
+		background: #005B80;
+	}
+	.shortcuts {
+		display: none;
+	}
 }

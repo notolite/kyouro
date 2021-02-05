@@ -2,36 +2,42 @@
 <html>
 
 <head>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="kyourosienn.css">
-	<meta charset="utf-8">
-	<script src="kyourosienn.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic&display=swap">
 </head>
 
 <body>
-	<h1>教育ローマ字2.0 入力支援</h1>
+	<header>
+		<h1>教育ローマ字2.0 入力支援</h1>
+	</header>
 	<article>
-		<textarea id="Nyuuryoku" placeholder="入力欄" autofocus onInput="Zikkou()"></textarea>
-		<textarea id="Kekka" placeholder="出力欄"></textarea>
-		<div onclick="clipcopy()" id="copy" class="toolbox">出力をコピー</div>
-		<div onclick="clearrequest()" id="clear" class="toolbox">入力欄を消去</div>
-		<section id="Siyouhou">
+		<main>
+			<textarea id="tar" autofocus></textarea>
+			<div id="copy" class="toolbox">出力をコピー</div>
+			<div id="clear" class="toolbox">入力欄を消去</div>
+		</main>
+		<aside id="Siyouhou">
 			<h2>使用法</h2>
 			<ul>
-				<li><span class="Title"><span class="Resp">エムダッシュ（長音）</span>--</span></li>
-				<li><span class="Title"><span class="Resp">ミドルドット（用言）</span>l</span></li>
-				<li><span class="Title"><span class="Resp">ドットなしi</span>i</span><span
-						class="Compl">ドットつきiはijで入力してください。</span></li>
-				<li><span class="Title"><span class="Resp">上付きドット</span>j</span></li>
-				<li><span class="Title"><span class="Resp">上付きアクセント符号</span>f</span></li>
-				<li><span class="Title"><span class="Resp">下付きアクセント符号</span>c</span></li>
-				<li><span class="Title"><span class="Resp">上付き境界下降符号</span>ff</span></li>
-				<li><span class="Title"><span class="Resp">下付き境界下降符号</span>cc</span></li>
-				<li><span class="Title"><span class="Resp">逆疑問符</span>q</span></li>
-				<li><span class="Title"><span class="Resp">上記を無効化する前接辞</span>d</span></li>
+				<li><span><span class="Resp">特殊文字</span>入力</span></li>
+				<li><span><span class="Resp">—</span><kbd>-</kbd><kbd>-</kbd></span></li>
+				<li><span><span class="Resp">·</span><kbd>l</kbd></span></li>
+				<li><span><span class="Resp">ı</span><kbd>i</kbd></span></li>
+				<li><span><span class="Resp">◌̇</span><kbd>j</kbd></span></li>
+				<li><span><span class="Resp">i</span><kbd>i</kbd><kbd>j</kbd></span></li>
+				<li><span><span class="Resp">ˈ</span><kbd>f</kbd></span></li>
+				<li><span><span class="Resp">ˌ</span><kbd>c</kbd></span></li>
+				<li><span><span class="Resp">ˋ</span>F</span></li>
+				<li><span><span class="Resp">ˎ</span>C</span></li>
+				<li><span><span class="Resp">¿</span><kbd>q</kbd></span></li>
+				<li><span><span class="Resp">escape</span><kbd>d</kbd></span></li>
 			</ul>
-		</section>
+			<p class="shortcuts"><kbd><kbd>Alt</kbd> + <kbd>C</kbd></kbd>でコピー，<kbd><kbd>Alt</kbd> + <kbd>D</kbd></kbd>で入出力欄の消去ができます．その他の方法でコピー・消去を行うと，文字列内にゼロ幅スペースが残ったり，不具合が起こったりすることがあります．</p>
+		</aside>
 	</article>
+	<script src="kyourosienn.js"></script>
 </body>
 
 </html>
