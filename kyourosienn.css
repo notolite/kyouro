@@ -46,6 +46,7 @@ textarea {
 		display: block;
 		height: 4vh;
 		border-bottom: solid #003 1px;
+		line-height: 2;
 	}
 	.Resp{
 
@@ -76,6 +77,7 @@ textarea {
 		resize: none;
 		background: transparent;
 		color: #ddd;
+		line-height: 1.4;
 	}
 	textarea:focus{
 		outline: 0;
