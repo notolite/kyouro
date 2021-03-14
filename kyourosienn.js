@@ -1,6 +1,6 @@
-let mark = ["\u200bF", "\u200bC", "\u200b--", "\u200bl", "\u200bj", "\u200bf", "\u200bc", "\u200bq","\u200bi","F", "C", "--", "i", "l", "j", "f", "c", "q","ı̇", "dˋ", "dˎ", "d—", "d·", "ḋ", "dˈ", "dˌ", "d¿","ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ","ㅇ","ㅈ"];
-let output = ["ㄱ","ㄴ","ㄷ","ㄹ","ㅁ","ㅂ","ㅅ","ㅇ","ㅈ","ˋ", "ˎ", "—", "ı", "·", "̇", "ˈ", "ˌ", "¿", "\u200bi","\u200bF", "\u200bC", "\u200b--", "\u200bl", "\u200bj", "\u200bf", "\u200bc", "\u200bq","\u200bF", "\u200bC", "\u200b--", "\u200bl", "\u200bj", "\u200bf", "\u200bc", "\u200bq","\u200bi"];
-let target;
+let mark = ["F", "C", "L", "i", "l", "j", "f", "c", "q"];
+let output = ["ˋ", "ˎ", "—", "ı", "·", "̇", "ˈ", "ˌ", "¿"];
+
 const tar = document.getElementById("tar");
 let clipCopy = () => {
     tar.value = target.replace(new RegExp("\u200bi","g"),"");
@@ -18,14 +18,28 @@ let design = () => {
     }
 }
 let winwid = window.innerWidth;
-
+let target = extarget = [];
 tar.addEventListener("input", () => {
-    target = tar.value;
-    for (var i = 0; i < mark.length; i++) {
-        target = target.replace(new RegExp(mark[i], 'g'), output[i]);
+    target = tar.value.split("");
+    let iDiff = target.length - extarget.length;
+    if (iDiff >= 0){
+        let i = j = 0;
+        for (; i < target.length;) {
+            if (i != 0 && target[i] != extarget[j] && target[i - 1] != "\u005c") {
+                for (let k = 0; k < mark.length; k++) {
+                    target[i] = target[i].replace(new RegExp(mark[k], 'g'), output[k]);
+                }
+                j--;
+            } else if (target [i - 1] == "\u005c") {
+                target.splice(i-1,1);
+            }
+            i++; j++;
+            console.log(i); console.log(j);
+        }
+        console.log();
     }
-    target = target.normalize("NFC");
-    tar.value = target;
+    tar.value = target.join("").replace("ı̇","i").normalize("NFC");
+    extarget = target;
 })
 
 
