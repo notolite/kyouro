@@ -34,9 +34,7 @@ tar.addEventListener("input", () => {
                 target.splice(i-1,1);
             }
             i++; j++;
-            console.log(i); console.log(j);
         }
-        console.log();
     }
     tar.value = target.join("").replace("ı̇","i").normalize("NFC");
     extarget = target;

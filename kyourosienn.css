@@ -1,5 +1,8 @@
-		/* 仮 */
-
+@font-face{
+	font-family: 'Gentium Book Basic';
+	src: local('Gentium Book Basic'),
+		 url('./font.woff') format('woff');
+}
 body {
 	margin: 0;
 	padding: 0;
