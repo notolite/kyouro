@@ -25,7 +25,7 @@ tar.addEventListener("input", () => {
     if (iDiff >= 0){
         let i = j = 0;
         for (; i < target.length;) {
-            if (i != 0 && target[i] != extarget[j] && target[i - 1] != "\u005c") {
+            if (target[i] != extarget[j] && target[i - 1] != "\u005c") {
                 for (let k = 0; k < mark.length; k++) {
                     target[i] = target[i].replace(new RegExp(mark[k], 'g'), output[k]);
                 }
@@ -34,7 +34,9 @@ tar.addEventListener("input", () => {
                 target.splice(i-1,1);
             }
             i++; j++;
+            console.log(i); console.log(j);
         }
+        console.log("");
     }
     tar.value = target.join("").replace("ı̇","i").normalize("NFC");
     extarget = target;
