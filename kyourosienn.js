@@ -22,14 +22,15 @@ let target = extarget = [];
 tar.addEventListener("input", () => {
     target = tar.value.split("");
     let iDiff = target.length - extarget.length;
+    let i = j = position = 0;
     if (iDiff >= 0){
-        let i = j = 0;
         for (; i < target.length;) {
             if (target[i] != extarget[j] && target[i - 1] != "\u005c") {
                 for (let k = 0; k < mark.length; k++) {
                     target[i] = target[i].replace(new RegExp(mark[k], 'g'), output[k]);
                 }
                 j--;
+                position = i;
             } else if (target [i - 1] == "\u005c") {
                 target.splice(i-1,1);
             }
@@ -37,6 +38,10 @@ tar.addEventListener("input", () => {
         }
     }
     tar.value = target.join("").normalize("NFC");
+    if (position >= 1) {
+        tar.selectionStart = position + 1;
+        tar.selectionEnd = position + 1;
+    }
     extarget = target;
 })
 
