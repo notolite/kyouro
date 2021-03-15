@@ -39,8 +39,7 @@ tar.addEventListener("input", () => {
     }
     tar.value = target.join("").normalize("NFC");
     if (position >= 1) {
-        tar.selectionStart = position + 1;
-        tar.selectionEnd = position + 1;
+        tar.setSelectionRange(position + 1, position + 1);
     }
     extarget = target;
 })
