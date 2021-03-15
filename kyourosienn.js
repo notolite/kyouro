@@ -44,19 +44,6 @@ tar.addEventListener("input", () => {
 document.getElementById("copy").addEventListener("click", clipCopy);
 document.getElementById("clear").addEventListener("click", clearRequest);
 
-document.addEventListener("keydown", event => {
-    if (event.altKey === true) {
-        switch (event.code) {
-            case "KeyC":
-                clipCopy();
-                break;
-            case "KeyD":
-                clearRequest();
-                break;
-        }
-    }
-});
-
 // design for computers below
 
 window.onload = () => {
