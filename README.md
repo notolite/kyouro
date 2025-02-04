@@ -1,7 +1,7 @@
 # 教育ローマ字入力支援
 ## リンク
 
-[GitHub Pagesで開く](https://notolyte.github.io/kyouro/)
+[GitHub Pagesで開く](https://notolite.github.io/kyouro/)
 
 ## 簡介
 教育ローマ字のライトユーザー向けに，ウェブ上で特殊記号が容易に打てるように設計された入力ツールです．教育ローマ字で頻用されない文字を特殊記号に割り当てています．詳細は当該ページをご覧ください．
