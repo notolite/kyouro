@@ -1,5 +1,5 @@
-let mark = ["F", "C", "L", "i", "l", "j", "f", "c", "q", "X"];
-let output = ["ˋ", "ˎ", "—", "ı", "·", "̇", "ˈ", "ˌ", "¿", "́"];
+let mark = ["F", "C", "L", "i", "l", "j", "f", "c", "q", "X", "="];
+let output = ["ˋ", "ˎ", "—", "ı", "·", "̇", "ˈ", "ˌ", "¿", "́", "\u0304"];
 
 const tar = document.getElementById("tar");
 let clipCopy = () => {
@@ -39,7 +39,7 @@ tar.addEventListener("input", () => {
 
         }
     }
-    変更前文字列 = 現文字配列.join("").replace("ı̇", "i").normalize("NFC");
+    変更前文字列 = 現文字配列.join("").replace("ı̇", "i").replace("ı̄", "ī").normalize("NFC");
     tar.value = 変更前文字列;
     if (position >= 1) {
         tar.setSelectionRange(position + 1, position + 1);
