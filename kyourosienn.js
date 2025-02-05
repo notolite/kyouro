@@ -1,26 +1,26 @@
 let mark = ["F", "C", "L", "i", "l", "j", "f", "c", "q", "X", "="];
-let output = ["ˋ", "ˎ", "—", "ı", "·", "̇", "ˈ", "ˌ", "¿", "́", "\u0304"];
+let output = ["ˋ", "ˎ", "—", "ı", "·", "\u0307", "ˈ", "ˌ", "¿", "\u0301", "\u0304"];
 
-const tar = document.getElementById("tar");
+const 入力欄 = document.getElementById("入力欄");
 let clipCopy = () => {
-    tar.select();
+    入力欄.select();
     document.execCommand("copy");
 }
-let clearRequest = () => tar.value = "";
+let clearRequest = () => 入力欄.value = "";
 let design = () => {
     if (現文字配列.length < 20) {
-        tar.style.fontSize = winwid * 0.7 * 0.1 + "px";
+        入力欄.style.fontSize = winwid * 0.7 * 0.1 + "px";
     } else if (現文字配列.length < 30) {
-        tar.style.fontSize = winwid * 0.7 * 0.06 + "px";
+        入力欄.style.fontSize = winwid * 0.7 * 0.06 + "px";
     } else {
-        tar.style.fontSize = winwid * 0.7 * 0.03 + "px";
+        入力欄.style.fontSize = winwid * 0.7 * 0.03 + "px";
     }
 }
 let winwid = window.innerWidth;
 let 現文字配列 = 変更前文字配列 = [];
 let 変更前文字列 = "";
-tar.addEventListener("input", () => {
-    現文字配列 = tar.value.split("");
+入力欄.addEventListener("input", () => {
+    現文字配列 = 入力欄.value.split("");
     変更前文字配列 = 変更前文字列.split("");
     let 差分 = 現文字配列.length - 変更前文字配列.length;
     let i = j = position = 0;
@@ -40,9 +40,9 @@ tar.addEventListener("input", () => {
         }
     }
     変更前文字列 = 現文字配列.join("").replace("ı̇", "i").replace("ı̄", "ī").normalize("NFC");
-    tar.value = 変更前文字列;
+    入力欄.value = 変更前文字列;
     if (position >= 1) {
-        tar.setSelectionRange(position + 1, position + 1);
+        入力欄.setSelectionRange(position + 1, position + 1);
     }
 
 })
@@ -55,8 +55,8 @@ document.getElementById("clear").addEventListener("click", clearRequest);
 
 window.onload = () => {
     if (winwid > 480) {
-        tar.addEventListener("input", design);
-        tar.style.fontSize = winwid * 0.7 * 0.1 + "px";
-        tar.focus();
+        入力欄.addEventListener("input", design);
+        入力欄.style.fontSize = winwid * 0.7 * 0.1 + "px";
+        入力欄.focus();
     }
 }
