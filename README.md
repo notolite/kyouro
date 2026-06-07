@@ -1,4 +1,8 @@
 # 教育ローマ字入力支援
+## 追記
+このレポジトリは現在定期的な管理が行われておらず、より新しいバージョンの教育ローマ字に対応していません。
+最新版に対応したものは、理亞子さんのリポジトリからご利用になれます（[デプロイへのリンク](https://tlistlil.github.io/sps/Latn/kyouro/klavaro.html)）。
+
 ## リンク
 
 [GitHub Pagesで開く](https://notolite.github.io/kyouro/)
